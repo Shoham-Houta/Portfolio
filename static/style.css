@@ -1,0 +1,77 @@
+/* Background overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  backdrop-filter: blur(8px); /* Blur effect */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  z-index: 5;
+}
+
+/* Show overlay when form is visible */
+.overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Center the form and make it fit the screen */
+.form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  width: 90%; /* Makes form responsive */
+  max-width: 600px;
+  max-height: 90vh; /* Ensures it never overflows the screen */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* Prevents unnecessary scrolling */
+}
+
+/* Show form when active */
+.form-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Close button */
+.btn-close {
+  z-index: 20;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Prevents entire page from scrolling */
+body {
+  margin-top: 56px;
+  overflow: hidden; /* Ensures no page scrolling */
+}
+/* Hide the scrollbar while keeping scrolling functional */
+.form-container form {
+  max-height: 75vh; /* Ensures the form does not overflow the screen */
+  overflow-y: auto; /* Allows vertical scrolling if content overflows */
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer/Edge */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.form-container form::-webkit-scrollbar {
+  display: none;
+}

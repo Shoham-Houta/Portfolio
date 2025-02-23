@@ -2,8 +2,66 @@
 
 <body>
   {% block Content %}
+  <header
+    class="hero d-flex align-items-center justify-content-center text-center"
+  >
+    <div class="container">
+      <h1 class="display-4">Hi, I'm Shoham Houta</h1>
+      <p class="lead">
+        A passionate developer specializing in security, networking, and
+        software engineering.
+      </p>
+      <a href="/projects" class="btn btn-primary btn-lg">View My Projects</a>
+    </div>
+  </header>
 
-  <p>test</p>
+  <!-- About Preview Section -->
+  <section class="container text-center my-5">
+    <h2>About Me</h2>
+    <p>
+      A short introduction about yourself...<br /><a
+        href="/about"
+        class="btn btn-outline-primary mt-2"
+        >Read More</a
+      >
+    </p>
+  </section>
+  <section class="container my-5">
+    <h2 class="text-center">Featured Projects</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="static/project1.jpg" class="card-img-top" alt="Project 1" />
+          <div class="card-body">
+            <h5 class="card-title">Project 1</h5>
+            <p class="card-text">Short description...</p>
+            <a href="/projects/1" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="static/project2.jpg" class="card-img-top" alt="Project 2" />
+          <div class="card-body">
+            <h5 class="card-title">Project 2</h5>
+            <p class="card-text">Short description...</p>
+            <a href="/projects/2" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="static/project3.jpg" class="card-img-top" alt="Project 3" />
+          <div class="card-body">
+            <h5 class="card-title">Project 3</h5>
+            <p class="card-text">Short description...</p>
+            <a href="/projects/3" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Background Blur Overlay -->
   <div id="overlay" class="overlay d-none"></div>
 
@@ -92,21 +150,23 @@
           <ul class="list-unstyled">
             <li>
               <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:your.email@example.com">your.email@example.com</a>
+              <a href="mailto:houta.shoham@gmail.com">houta.shoham@gmail.com</a>
             </li>
             <li>
               <i class="fa-solid fa-phone"></i>
-              <a href="tel:+1234567890">+1 234 567 890</a>
+              <a href="tel:+9720502137818">+972050-213-7818</a>
             </li>
             <li>
               <i class="fa-brands fa-linkedin"></i>
-              <a href="https://linkedin.com/in/yourlinkedin" target="_blank"
+              <a href="https://linkedin.com/in/shohamhouta" target="_blank"
                 >LinkedIn</a
               >
             </li>
             <li>
               <i class="fa-brands fa-github"></i>
-              <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+              <a href="https://github.com/Shoham-Houta" target="_blank"
+                >GitHub</a
+              >
             </li>
           </ul>
         </div>
@@ -116,6 +176,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Initialize Quill Editor
       var quill = new Quill("#editor", {
         theme: "snow",
         placeholder: "Write your message...",
@@ -135,35 +196,71 @@
         document.getElementById("hiddenMessage").value = quill.root.innerHTML;
       });
 
-      // Form toggle logic
+      // Form toggle elements
       let form = document.getElementById("contactForm");
       let overlay = document.getElementById("overlay");
       let closeForm = document.getElementById("closeForm");
+      let contactButton = document.getElementById("toggleContact");
+      let contactButtonFooter = document.getElementById("toggleContactFooter");
+      let offcanvasMenu = document.querySelector(".offcanvas"); // Bootstrap offcanvas menu
 
-      document
-        .getElementById("toggleContact")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          form.classList.toggle("d-none");
-          setTimeout(() => form.classList.toggle("show"), 10);
-          overlay.classList.toggle("show");
-          overlay.classList.toggle("d-none");
-        });
+      // Bootstrap Offcanvas API
+      let offcanvasInstance =
+        bootstrap.Offcanvas.getInstance(offcanvasMenu) ||
+        new bootstrap.Offcanvas(offcanvasMenu);
 
-      // Close form when clicking the close button or outside
-      closeForm.addEventListener("click", function () {
-        form.classList.add("d-none");
+      // Show form function
+      function showContactForm() {
+        form.classList.remove("d-none");
+        overlay.classList.remove("d-none");
+
+        // Close menu if open
+        if (offcanvasMenu.classList.contains("show")) {
+          offcanvasInstance.hide();
+        }
+
+        setTimeout(() => {
+          form.classList.add("show");
+          overlay.classList.add("show");
+        }, 10); // Smooth transition
+      }
+
+      // Hide form function
+      function hideContactForm() {
         form.classList.remove("show");
         overlay.classList.remove("show");
-      });
+        setTimeout(() => {
+          form.classList.add("d-none");
+          overlay.classList.add("d-none");
+        }, 300); // Matches transition duration
+      }
 
-      overlay.addEventListener("click", function () {
-        form.classList.add("d-none");
-        form.classList.remove("show");
-        overlay.classList.remove("show");
+      // Toggle form when clicking the contact button
+      contactButton.addEventListener("click", function () {
+        if (form.classList.contains("d-none")) {
+          showContactForm();
+        } else {
+          hideContactForm();
+        }
       });
+      contactButtonFooter.addEventListener("click", function () {
+        if (form.classList.contains("d-none")) {
+          showContactForm();
+        } else {
+          hideContactForm();
+        }
+      });
+      // Close form when clicking close button or outside overlay
+      closeForm.addEventListener("click", hideContactForm);
+      overlay.addEventListener("click", hideContactForm);
     });
   </script>
 
+  <footer class="bg-dark text-white text-center p-3">
+    <p>
+      &copy; 2025 Shoham Houta. All rights reserved. |
+      <a href="#" id="toggleContactFooter" class="text-white">Contact Me</a>
+    </p>
+  </footer>
   {% endblock %}
 </body>

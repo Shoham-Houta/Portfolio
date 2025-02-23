@@ -32,8 +32,6 @@
   width: 90%; /* Makes form responsive */
   max-width: 600px;
   max-height: 90vh; /* Ensures it never overflows the screen */
-  background: white;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -60,7 +58,6 @@
 /* Prevents entire page from scrolling */
 body {
   margin-top: 56px;
-  overflow: hidden; /* Ensures no page scrolling */
 }
 /* Hide the scrollbar while keeping scrolling functional */
 .form-container form {

@@ -32,12 +32,14 @@ def home():
 
 @app.route("/Projects")
 def projects():
-    return render_template("projects.html")
+    form = ContactForm()
+    return render_template("projects.html", form=form)
 
 
 @app.route("/About")
 def about():
-    return render_template("about.html")
+    form = ContactForm()
+    return render_template("about.html", form=form)
 
 
 @app.route("/Contact", methods=["POST"])

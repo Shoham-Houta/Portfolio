@@ -1,1 +1,123 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %}About Me{% endblock %} {% block
+Content %}
+
+<!-- Background Blur Overlay -->
+<!-- Background Overlay (Blur Effect) -->
+<div id="overlay" class="overlay d-none"></div>
+
+<!-- Contact Form Section (Initially Hidden) -->
+<div class="container-fluid d-flex justify-content-center align-items-center">
+  <div id="contactForm" class="form-container d-none">
+    <form
+      action="/Contact"
+      method="post"
+      class="p-4 border rounded bg-light shadow needs-validation"
+      novalidate
+    >
+      {{ form.hidden_tag() }}
+
+      <!-- Close Button -->
+      <button
+        type="button"
+        class="btn-close position-absolute top-0 end-0 m-2"
+        id="closeForm"
+      ></button>
+
+      <!-- Form Title -->
+      <h3 class="text-center mb-3">Contact Me</h3>
+
+      <!-- Name & Email -->
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <label for="fullname" class="form-label">Full Name</label>
+          <div class="input-group">
+            <span class="input-group-text"
+              ><i class="fa-solid fa-user"></i
+            ></span>
+            {{ form.fullname(class="form-control", required="required") }}
+          </div>
+          {% if form.fullname.errors %}
+          <div class="text-danger">
+            {% for error in form.fullname.errors %} {{ error }} {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <div class="input-group">
+            <span class="input-group-text"
+              ><i class="fa-solid fa-envelope"></i
+            ></span>
+            {{ form.email(class="form-control", required="required") }}
+          </div>
+          {% if form.email.errors %}
+          <div class="text-danger">
+            {% for error in form.email.errors %} {{ error }} {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Subject -->
+      <div class="row g-3 mt-2">
+        <div class="col-12">
+          <label for="subject" class="form-label">Subject</label>
+          <div class="input-group">
+            <span class="input-group-text"
+              ><i class="fa-solid fa-pen"></i
+            ></span>
+            {{ form.subject(class="form-control", required="required") }}
+          </div>
+          {% if form.subject.errors %}
+          <div class="text-danger">
+            {% for error in form.subject.errors %} {{ error }} {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <div id="editor" class="form-control" style="height: 150px"></div>
+        <input type="hidden" name="message" id="hiddenMessage" />
+      </div>
+      {% if form.message.errors %}
+      <div class="text-danger">
+        {% for error in form.message.errors %} {{ error }} {% endfor %}
+      </div>
+      {% endif %}
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100 mt-3">
+        Send Message
+      </button>
+
+      <!-- Contact Methods -->
+      <div class="text-center mt-4">
+        <p class="fw-bold">Or reach me directly:</p>
+        <ul class="list-unstyled">
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:houta.shoham@gmail.com">houta.shoham@gmail.com</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+9720502137818">+972 50-213-7818</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com/in/shohamhouta" target="_blank"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/Shoham-Houta" target="_blank">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

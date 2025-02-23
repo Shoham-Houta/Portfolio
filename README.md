@@ -68,7 +68,8 @@ This is a **personal portfolio website** built using Flask. It showcases project
 pip install flask flask-wtf flask-mail bleach python-dotenv quill
 ```
 
-2️⃣ Configure .env File
+### 2️⃣ Configure .env File
+
 Create a .env file and add the following:
 
 ```ini
@@ -77,7 +78,7 @@ MAIL_PASSWORD=your-app-password
 SECRET_KEY=your-secret-key
 ```
 
-3️⃣ Run the Flask App
+### 3️⃣ Run the Flask App
 
 ```sh
 python app.py
@@ -85,7 +86,8 @@ python app.py
 
 Then visit http://127.0.0.1:5000 in your browser.
 
-📌 Next Steps
+### 📌 Next Steps
+
 ✅ Ensure validation errors appear inside the form.
 ✅ Keep the form open if validation fails.
 ✅ Ensure emails are properly formatted & sent.

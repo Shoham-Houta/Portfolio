@@ -86,15 +86,8 @@ python app.py
 
 Then visit http://127.0.0.1:5000 in your browser.
 
-### 📌 Next Steps
+#### 👤 Contact Info
 
-✅ Ensure validation errors appear inside the form.
-✅ Keep the form open if validation fails.
-✅ Ensure emails are properly formatted & sent.
-🔲 Log messages in a database.
-🔲 Add reCAPTCHA for spam protection.
-🔲 Enable AJAX for form submission without reloading.
-👤 Contact Info
 📧 Email: houta.shoham@gmail.com
-📌 LinkedIn: linkedin.com/in/shohamhouta
-🌐 GitHub: github.com/Shoham-Houta
+📌 LinkedIn: [LinkedIn](linkedin.com/in/shohamhouta)
+🌐 GitHub: [GitHub](github.com/Shoham-Houta)

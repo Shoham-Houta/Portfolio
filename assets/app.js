@@ -1,14 +1,22 @@
 const DATA = {
+  // Email and phone are stored split into parts so the literal strings never
+  // appear in the served file — regex-based address harvesters won't match them.
+  // Edit the parts here; everything else references them by type.
+  contact: {
+    email: { user: "houta.shoham", domain: "gmail.com" },
+    phone: { parts: ["+972", "50", "213", "7818"] },
+  },
+
   hero: {
     label:  "Available for opportunities",
     name:   "Shoham Houta",
     title:  "SOC Analyst",
     bio:    "SOC-focused security professional with a background in data operations at Mobileye. Specializes in network traffic analysis, infrastructure defense, and threat detection — building the skills to monitor, investigate, and respond to incidents in complex environments. Proficient in Python, Linux, and hands-on homelab infrastructure.",
     contacts: [
-      { type: "phone",    href: "tel:+972502137818",                    label: "+972-50-213-7818" },
-      { type: "email",    href: "mailto:houta.shoham@gmail.com",        label: "houta.shoham@gmail.com" },
+      { type: "phone" },
+      { type: "email" },
       { type: "linkedin", href: "https://linkedin.com/in/shohamhouta",  label: "linkedin/shohamhouta" },
-      { type: "location", href: null,                                   label: "Tidhar 163, Israel" },
+      { type: "location", href: null,                                   label: "Israel" },
     ],
   },
 
@@ -85,7 +93,7 @@ const DATA = {
   footer: {
     name: "Shoham Houta © 2025",
     links: [
-      { label: "Email",    href: "mailto:houta.shoham@gmail.com" },
+      { label: "Email",    type: "email" },
       { label: "LinkedIn", href: "https://linkedin.com/in/shohamhouta" },
     ],
   },
@@ -104,6 +112,21 @@ function el(tag, cls, html) {
   if (cls) e.className = cls;
   if (html !== undefined) e.innerHTML = html;
   return e;
+}
+
+// Reassembles the split contact parts into a usable href/label pair.
+// Entries that carry their own href (LinkedIn, location) pass through unchanged.
+function resolveContact(c) {
+  if (c.type === 'email') {
+    const { user, domain } = DATA.contact.email;
+    const addr = user + String.fromCharCode(64) + domain;
+    return { href: 'mailto:' + addr, label: addr };
+  }
+  if (c.type === 'phone') {
+    const { parts } = DATA.contact.phone;
+    return { href: 'tel:' + parts.join(''), label: parts.join('-') };
+  }
+  return { href: c.href || null, label: c.label };
 }
 
 function sectionHeader(label, num) {
@@ -139,9 +162,10 @@ function renderHero() {
 
   const wrap = document.getElementById('hero-contacts');
   contacts.forEach(c => {
-    const tag  = c.href ? 'a' : 'span';
-    const item = el(tag, 'contact-item', ICONS[c.type] + c.label);
-    if (c.href) { item.href = c.href; if (c.type === 'linkedin') item.target = '_blank'; }
+    const { href, label } = resolveContact(c);
+    const tag  = href ? 'a' : 'span';
+    const item = el(tag, 'contact-item', ICONS[c.type] + label);
+    if (href) { item.href = href; if (c.type === 'linkedin') item.target = '_blank'; }
     wrap.appendChild(item);
   });
 }
@@ -245,9 +269,10 @@ function renderFooter() {
   document.getElementById('footer-name').textContent = DATA.footer.name;
   const links = document.getElementById('footer-links');
   DATA.footer.links.forEach(l => {
+    const { href } = resolveContact(l);
     const a = el('a','',l.label);
-    a.href = l.href;
-    if (l.href.startsWith('http')) a.target = '_blank';
+    a.href = href;
+    if (href.startsWith('http')) a.target = '_blank';
     links.appendChild(a);
   });
 }

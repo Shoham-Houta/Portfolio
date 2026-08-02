@@ -62,6 +62,15 @@ const DATA = {
             {text: "Recruit - Writeup", link: "https://github.com/Shoham-Houta/Writeups/blob/main/THM/2026/Recruit/recruit.md" }
         ],
     },
+        {
+        period: "Done",
+        tag: "TryHackMe",
+        role: "Web Application & API Pentesting - Support",
+        bullets: [
+                "Escalated from anonymous visitor to remote code execution by chaining five independent web vulnerabilities on a Linux target.",
+                {text: "Support - Writeup", link: "https://github.com/Shoham-Houta/Writeups/blob/main/THM/2026/Support/support.md"}
+        ],
+        },
   ],
 
   education: [

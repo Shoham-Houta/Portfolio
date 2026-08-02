@@ -1,47 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shoham Houta — SOC Analyst</title>
+  <title>Shoham Houta — Junior SOC Analyst</title>
+  <meta name="description" content="Junior SOC Analyst. 50+ machines solved on TryHackMe (top 2%), CAN-bus attack analysed from real log data, 515-hour state-certified cyber defence program, enterprise data operations at Mobileye 2022-2024." />
+  <meta name="theme-color" content="#0A0A0F" />
+  <link rel="canonical" href="https://houta.dev/" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Shoham Houta — Junior SOC Analyst" />
+  <meta property="og:description" content="Offensive background, defensive focus. 50+ machines on TryHackMe, CAN-bus log analysis, CHCSS 515." />
+  <meta property="og:url" content="https://houta.dev/" />
+  <meta name="twitter:card" content="summary" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
 
-<nav>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<nav aria-label="Main">
   <div class="wrap">
-    <a href="#" class="nav-logo">SH</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+    <a href="#top" class="nav-logo">SH</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links" id="nav-links"></ul>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#writeups">Writeups</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
-<header>
+<header id="top">
   <div class="wrap">
-    <div class="hero-flag" id="hero-label"></div>
-    <h1 id="hero-name"></h1>
+    <p class="hero-flag">Available for SOC roles</p>
+
+    <h1><span class="name-first">Shoham</span> Houta</h1>
+
     <div class="hero-role-row">
-      <div class="hero-role" id="hero-role"></div>
-      <div class="hero-role-line"></div>
+      <p class="hero-role">Junior SOC Analyst</p>
+      <div class="hero-role-line" aria-hidden="true"></div>
     </div>
-    <p class="hero-bio" id="hero-bio"></p>
-    <div class="hero-contacts" id="hero-contacts"></div>
+
+    <p class="hero-bio">
+      I've broken into 50+ machines — web chains ending in remote code execution, written up in
+      public. Now I'm documenting the other half: what those same attacks leave behind in the
+      logs, and which detection would have caught them.
+    </p>
+
+    <ul class="hero-proof">
+      <li>
+        <span class="proof-value">50+ · Top 2%</span>
+        <span class="proof-label">machines solved on TryHackMe</span>
+      </li>
+      <li>
+        <span class="proof-value">CAN-bus</span>
+        <span class="proof-label">simulated vehicle attack, analysed from real log data</span>
+      </li>
+      <li>
+        <span class="proof-value">515 h</span>
+        <span class="proof-label">state-certified cyber defence program</span>
+      </li>
+      <li>
+        <span class="proof-value">Mobileye</span>
+        <span class="proof-label">enterprise data operations, 2022–2024</span>
+      </li>
+    </ul>
+
+    <div class="hero-contacts" id="hero-contacts">
+      <a class="contact-item" href="#contact">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact
+      </a>
+      <a class="contact-item" href="https://github.com/Shoham-Houta" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0019.91 4a5.07 5.07 0 00-.09-3.77S18.73-.13 16 1.7a13.38 13.38 0 00-7 0C6.27-.13 5.18.23 5.18.23A5.07 5.07 0 005.09 4 5.44 5.44 0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        github/Shoham-Houta
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/shohamhouta" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin/shohamhouta
+      </a>
+      <span class="contact-item">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Israel
+      </span>
+    </div>
   </div>
 </header>
 
-<main id="main-content"></main>
+<main id="main-content">
+
+  <!-- ── 01 · PROJECTS & LABS ── -->
+  <section id="projects" class="reveal">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <h2 class="section-label">Projects &amp; Labs</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="experience-list">
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">2021 – 2022</div>
+            <div class="exp-company">Log analysis</div>
+          </div>
+          <div>
+            <h3 class="exp-role">CAN-Bus Attack — Log Analysis</h3>
+            <ul class="exp-bullets">
+              <li>Analysed genuine CAN-bus log data from a simulated attack on a vehicle, and worked out what the attacker achieved.</li>
+              <li>Identified a bypass of the vehicle's door-locking system and unauthorised control of additional in-vehicle systems.</li>
+              <li>Raw log data in, conclusion out — the same path a SOC analyst walks on an alert.</li>
+              <li>Analyst project on the Scale-Up Velocity data analysis program. A simulated scenario, not a live incident.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">2025 – 2026</div>
+            <div class="exp-company">Windows lab</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Active Directory Domain Lab</h3>
+            <ul class="exp-bullets">
+              <li>Built a Windows Server domain from scratch — domain controllers, organisational units, and domain-joined clients.</li>
+              <li>Configured Group Policy objects and file-server permissions across the domain.</li>
+              <li>Built to get hands-on with the environment a SOC analyst monitors day to day — how a domain is structured, and where permissions and policy actually live.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">Ongoing</div>
+            <div class="exp-company">Self-hosted</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Home Lab — Personal Infrastructure</h3>
+            <ul class="exp-bullets">
+              <li>Run a self-hosted Linux server with multiple containerised services, managed through Docker Compose with network isolation between components.</li>
+              <li>Applied zero-trust principles using a private VPN mesh, exposing services without opening public ports.</li>
+              <li>Day-to-day practice with Linux service management, container security, and access control in a live environment.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02 · WRITEUPS ── -->
+  <section id="writeups" class="reveal">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <h2 class="section-label">Writeups</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <p class="section-intro">
+        Published on GitHub. The offensive writeups document how the box fell; the defensive
+        series in progress documents what each of those attacks leaves behind in the logs.
+      </p>
+
+      <div class="experience-list">
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">Published</div>
+            <div class="exp-company">Offensive</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Recruit — Web Application Pentest</h3>
+            <ul class="exp-bullets">
+              <li>Enumeration, Local File Inclusion (LFI), and SQL injection against a web target.</li>
+              <li>
+                <a class="bullet-link" href="https://github.com/Shoham-Houta/Writeups/blob/main/THM/2026/Recruit/recruit.md" rel="noopener">Read the Recruit writeup ↗</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">Published</div>
+            <div class="exp-company">Offensive</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Support — Web &amp; API Pentest</h3>
+            <ul class="exp-bullets">
+              <li>Escalated from anonymous visitor to remote code execution by chaining five independent web vulnerabilities on a Linux target.</li>
+              <li>
+                <a class="bullet-link" href="https://github.com/Shoham-Houta/Writeups/blob/main/THM/2026/Support/support.md" rel="noopener">Read the Support writeup ↗</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period"><span class="status-pill">In progress</span></div>
+            <div class="exp-company">Defensive</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Defensive Series — 3 Writeups</h3>
+            <ul class="exp-bullets">
+              <li>Three writeups in progress, taking the defender's side of the same attack classes: what the traffic and the logs show, and which detection would have caught it.</li>
+              <li>Not yet published — listed here because it is what I am working on now, not something already delivered.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 · EXPERIENCE ── -->
+  <section id="experience" class="reveal">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <h2 class="section-label">Experience</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="experience-list">
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">2022 – 2024</div>
+            <div class="exp-company">Mobileye</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Data Operations Engineer</h3>
+            <ul class="exp-bullets">
+              <li>Owned the lifecycle of roughly 120 feature-QA datasets containing thousands of road clips — purging obsolete data and building new sets to keep the pool clean.</li>
+              <li>Directed a field collection team of 4–6 people, choosing acquisition locations to hit the required test coverage for map production.</li>
+              <li>Ran weekly sanity tests on release versions across varied hardware configurations and road conditions, gating which datasets moved downstream.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">Mandatory <br>&amp; reserve</div>
+            <div class="exp-company">Military service</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Operations &amp; Logistics Role</h3>
+            <ul class="exp-bullets">
+              <li>Operational and logistics responsibility in a high-tempo environment: coordinating people and resources under time pressure and against fixed procedure.</li>
+              <li>Followed by an extended period of reserve service.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 · SKILLS ── -->
+  <section id="skills" class="reveal">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <h2 class="section-label">Skills</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-cell">
+          <h3 class="skill-category">SOC &amp; Defence</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Log Analysis</span>
+            <span class="skill-tag">Alert Triage</span>
+            <span class="skill-tag">Incident Response</span>
+            <span class="skill-tag">Traffic Analysis</span>
+            <span class="skill-tag">Malware Analysis</span>
+            <span class="skill-tag">Threat Intelligence</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <h3 class="skill-category">Offensive</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Web App Pentesting</span>
+            <span class="skill-tag">OWASP Top 10</span>
+            <span class="skill-tag">Enumeration</span>
+            <span class="skill-tag">LFI</span>
+            <span class="skill-tag">SQL Injection</span>
+            <span class="skill-tag">Privilege Escalation</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <h3 class="skill-category">Networking</h3>
+          <div class="skill-items">
+            <span class="skill-tag">OSI Model</span>
+            <span class="skill-tag">TCP/IP</span>
+            <span class="skill-tag">VLANs</span>
+            <span class="skill-tag">Routing</span>
+            <span class="skill-tag">DHCP</span>
+            <span class="skill-tag">NAT / PAT</span>
+            <span class="skill-tag">ACLs</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <h3 class="skill-category">Linux</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Ubuntu</span>
+            <span class="skill-tag">Kali</span>
+            <span class="skill-tag">Users &amp; Permissions</span>
+            <span class="skill-tag">Services</span>
+            <span class="skill-tag">Bash</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <h3 class="skill-category">Windows &amp; AD</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Windows Server</span>
+            <span class="skill-tag">Active Directory</span>
+            <span class="skill-tag">Domain Controllers</span>
+            <span class="skill-tag">GPOs</span>
+            <span class="skill-tag">File Server Permissions</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <h3 class="skill-category">Tooling</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Tailscale</span>
+            <span class="skill-tag">Self-hosting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 · CERTIFICATIONS ── -->
+  <section id="certifications" class="reveal">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <h2 class="section-label">Certifications &amp; Education</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="edu-list">
+
+        <div class="edu-item">
+          <div class="edu-period">Dec 2025 – <br>May 2026</div>
+          <div>
+            <h3 class="edu-title">State-Certified Cyber Defense Implementer — Communication Networks</h3>
+            <p class="edu-desc">Israel Ministry of Labor, Vocational Training Administration. Awarded on completion of the 515-hour Kernelios program.</p>
+            <div class="cert-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Government-issued</div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">May 2026</div>
+          <div>
+            <h3 class="edu-title">Certified Hands-On Cyber Security Specialist (CHCSS 515) — Kernelios</h3>
+            <p class="edu-desc">515-hour intensive program: Linux administration (Ubuntu &amp; Kali), TCP/IP networking, Windows Server &amp; Active Directory, web application security, penetration testing, malware analysis, and incident response.</p>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2026</div>
+          <div>
+            <h3 class="edu-title">LPI Linux Essentials (010-160)</h3>
+            <p class="edu-desc">Linux Professional Institute certification covering the Linux command line, filesystem, users and permissions, processes, and basic scripting.</p>
+            <div class="cert-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> LPI000677490</div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2021 – 2022</div>
+          <div>
+            <h3 class="edu-title">Data Analysis &amp; Research — Scale-Up Velocity</h3>
+            <p class="edu-desc">Structured program in data analysis and research methodology — collection, processing, and drawing conclusions from data. Final project: the CAN-bus log analysis above.</p>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2013 – 2018</div>
+          <div>
+            <h3 class="edu-title">Expanded Computer Science — Mevohot Hanegev</h3>
+            <p class="edu-desc">High-school track with an extended computer science curriculum: OOP, algorithms, data structures, and SQL.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 06 · CONTACT ── -->
+  <section id="contact" class="reveal">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <h2 class="section-label">Contact</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="contact-block">
+        <p class="contact-lead">Hiring for a Tier&nbsp;1 SOC seat, or want the full CV?</p>
+        <p class="contact-note">Email is the fastest way to reach me. Based in Israel.</p>
+
+        <div class="contact-direct" id="contact-direct">
+          <a class="contact-item contact-item-lg" href="https://github.com/Shoham-Houta" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0019.91 4a5.07 5.07 0 00-.09-3.77S18.73-.13 16 1.7a13.38 13.38 0 00-7 0C6.27-.13 5.18.23 5.18.23A5.07 5.07 0 005.09 4 5.44 5.44 0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a class="contact-item contact-item-lg" href="https://www.linkedin.com/in/shohamhouta" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- The address is assembled by app.js so the literal string is not in the
+             served file. This fallback is human-readable but not regex-harvestable. -->
+        <noscript>
+          <p class="contact-note">Email: houta.shoham [at] gmail [dot] com</p>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div class="wrap">
     <div class="footer-inner">
-      <span class="footer-name" id="footer-name"></span>
-      <div class="footer-links" id="footer-links"></div>
+      <span class="footer-name">Shoham Houta · houta.dev</span>
+      <div class="footer-links">
+        <a href="https://github.com/Shoham-Houta" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/shohamhouta" rel="noopener">LinkedIn</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </div>
 </footer>

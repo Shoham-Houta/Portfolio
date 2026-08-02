@@ -10,8 +10,8 @@ deployed to Cloudflare Pages.
 | `index.html` | All page content. Nothing is rendered by JavaScript. |
 | `assets/styles.css` | Styles. Mobile-first, verified at 375px. |
 | `assets/app.js` | Progressive enhancement only: nav, scroll reveal, email link injection. |
-| `_headers` | Security headers and cache policy for Cloudflare Pages. |
-| `_redirects` | www → apex, `/index.html` → `/`, SPA-style fallback. |
+| `_headers` | Security headers and cache policy. |
+| `.assetsignore` | Keeps `.git` and other repo plumbing out of the deployed assets. |
 | `robots.txt` | Allows search crawlers, blocks AI and SEO scrapers. |
 
 ## Contact
@@ -35,4 +35,16 @@ python3 -m http.server 8787
 
 ## Deploy
 
-Cloudflare Pages, root directory `/`, no build command, output directory `/`.
+Cloudflare, `npx wrangler deploy`, assets directory `.` (the repo root).
+
+Because the assets directory is the repo root, **everything not listed in
+`.assetsignore` is publicly reachable** at `houta.dev/<path>` — including `.git`
+if it is not excluded. Check after any change to that file:
+
+```
+curl -sI https://houta.dev/.git/config | head -1   # expect 404
+```
+
+There is no `_redirects` file. Wrangler rejects absolute URLs there, and a
+`/*  /index.html  200` fallback loops on a static site. Handle www → apex with a
+Redirect Rule in the Cloudflare dashboard instead.

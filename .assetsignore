@@ -1,0 +1,13 @@
+# Wrangler serves the repo root as static assets, so anything not excluded here
+# is publicly reachable at houta.dev/<path>. Keep repository plumbing out.
+.git
+.git/**
+.gitignore
+.assetsignore
+.wrangler
+.wrangler/**
+node_modules
+node_modules/**
+README.md
+*.md
+.DS_Store

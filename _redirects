@@ -1,0 +1,4 @@
+https://www.houta.dev/*  https://houta.dev/:splat  301
+/index.html              /                         301
+/cv                      /#contact                 302
+/*                       /index.html               200

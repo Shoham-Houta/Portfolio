@@ -11,6 +11,8 @@ deployed to Cloudflare Pages.
 | `assets/styles.css` | Styles. Mobile-first, verified at 375px. |
 | `assets/app.js` | Progressive enhancement only: nav, scroll reveal, email link injection. |
 | `_headers` | Security headers and cache policy. |
+| `assets/og.png` | 1200x630 social share image. |
+| `tools/og-image.html` | Source for `assets/og.png`. Not served. |
 | `.assetsignore` | Keeps `.git` and other repo plumbing out of the deployed assets. |
 | `robots.txt` | Allows search crawlers, blocks AI and SEO scrapers. |
 
@@ -26,6 +28,21 @@ number is published. Keep it that way.
 
 Because there is no form, the CSP in `_headers` is strict: `connect-src 'none'` and
 `form-action 'none'`. If a form is ever added back, both need loosening.
+
+## Regenerating the share image
+
+`tools/og-image.html` pulls Unbounded and Geist Mono from Google Fonts, so the render needs
+network access. Edit that file, then:
+
+```
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+  --virtual-time-budget=8000 --window-size=1200,630 \
+  --screenshot=assets/og.png "file://$PWD/tools/og-image.html"
+```
+
+Keep at least 80px of clear space on every side, and re-check after any text change — the
+name is close to the right edge at the current size.
 
 ## Local preview
 

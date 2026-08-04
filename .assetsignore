@@ -11,3 +11,7 @@ node_modules/**
 README.md
 *.md
 .DS_Store
+
+# Source for assets/og.png — regenerated, never served.
+tools
+tools/**

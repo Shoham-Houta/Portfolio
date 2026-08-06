@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shoham Houta — Junior SOC Analyst</title>
-  <meta name="description" content="Junior SOC Analyst. 50+ machines solved on TryHackMe (top 2%), CAN-bus attack analysed from real log data, 515-hour state-certified cyber defence program, enterprise data operations at Mobileye 2022-2024." />
+  <meta name="description" content="Junior SOC Analyst. 50+ machines solved on TryHackMe (top 2%), published phishing triage and offensive writeups, 515-hour state-certified cyber defence program, enterprise data operations at Mobileye 2022-2024." />
   <meta name="theme-color" content="#0A0A0F" />
   <link rel="canonical" href="https://houta.dev/" />
 
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Shoham Houta — Junior SOC Analyst" />
-  <meta property="og:description" content="Offensive background, defensive focus. 50+ machines on TryHackMe, CAN-bus log analysis, CHCSS 515." />
+  <meta property="og:description" content="Offensive background, defensive focus. 50+ machines on TryHackMe, published phishing triage writeup, CHCSS 515." />
   <meta property="og:url" content="https://houta.dev/" />
   <meta property="og:image" content="https://houta.dev/assets/og.png" />
   <meta property="og:image:width" content="1200" />
@@ -60,8 +60,8 @@
 
     <p class="hero-bio">
       I've broken into 50+ machines — web chains ending in remote code execution, written up in
-      public. Now I'm documenting the other half: what those same attacks leave behind in the
-      logs, and which detection would have caught them.
+      public. Now I'm working the other side, and the first defensive writeup is up: a phishing
+      message triaged from its headers down to the attachment.
     </p>
 
     <ul class="hero-proof">
@@ -70,8 +70,8 @@
         <span class="proof-label">machines solved on TryHackMe</span>
       </li>
       <li>
-        <span class="proof-value">CAN-bus</span>
-        <span class="proof-label">simulated vehicle attack, analysed from real log data</span>
+        <span class="proof-value">Phish triage</span>
+        <span class="proof-label">headers to attachment, published writeup</span>
       </li>
       <li>
         <span class="proof-value">515 h</span>
@@ -178,10 +178,29 @@
 
       <p class="section-intro">
         Published on GitHub. The offensive writeups document how the box fell; the defensive
-        series in progress documents what each of those attacks leaves behind in the logs.
+        ones take the other side — what the attack leaves behind, and how it gets caught.
       </p>
 
       <div class="experience-list">
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">Published</div>
+            <div class="exp-company">Defensive</div>
+          </div>
+          <div>
+            <h3 class="exp-role">The Greenholt Phish — Email &amp; Attachment Triage</h3>
+            <ul class="exp-bullets">
+              <li>Traced the <code>Received</code> chain to the originating host and found the message came from an IP the sender domain's own SPF record does not authorise.</li>
+              <li>Caught a <code>Reply-To</code> pointing at a free mailbox while the <code>From</code> claimed a real corporate domain — replies would have gone straight to attacker-controlled infrastructure.</li>
+              <li>Identified the attached "PDF" as a RAR archive disguised by its extension. Triaged by hash and metadata only; the attachment was never extracted or executed.</li>
+              <li>Verdict: malicious — phishing carrying a malware payload under a spoofed corporate identity.</li>
+              <li>
+                <a class="bullet-link" href="https://github.com/Shoham-Houta/Writeups/blob/main/THM/2026/Greenholt%20Phish/the-greenholt-phish.md" rel="noopener">Read the Greenholt Phish writeup ↗</a>
+              </li>
+            </ul>
+          </div>
+        </article>
 
         <article class="exp-item">
           <div>
@@ -221,9 +240,9 @@
             <div class="exp-company">Defensive</div>
           </div>
           <div>
-            <h3 class="exp-role">Defensive Series — 3 Writeups</h3>
+            <h3 class="exp-role">Defensive Series — 2 More Writeups</h3>
             <ul class="exp-bullets">
-              <li>Three writeups in progress, taking the defender's side of the same attack classes: what the traffic and the logs show, and which detection would have caught it.</li>
+              <li>Two more in progress, continuing the defender's side of the attack classes above: what the traffic and the logs show, and which detection would have caught it.</li>
               <li>Not yet published — listed here because it is what I am working on now, not something already delivered.</li>
             </ul>
           </div>
@@ -294,6 +313,8 @@
             <span class="skill-tag">Alert Triage</span>
             <span class="skill-tag">Incident Response</span>
             <span class="skill-tag">Traffic Analysis</span>
+            <span class="skill-tag">Phishing Analysis</span>
+            <span class="skill-tag">SPF / DKIM / DMARC</span>
             <span class="skill-tag">Malware Analysis</span>
             <span class="skill-tag">Threat Intelligence</span>
           </div>

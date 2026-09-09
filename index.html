@@ -150,15 +150,47 @@
 
         <article class="exp-item">
           <div>
+            <div class="exp-period">2026</div>
+            <div class="exp-company">Blue team tooling</div>
+          </div>
+          <div>
+            <h3 class="exp-role">Brute-Force Login Detector — PowerShell</h3>
+            <ul class="exp-bullets">
+              <li>Pulls Kerberos pre-auth failures and logon failures (event IDs 4768, 4771, 4625) from the Windows Security log and reconstructs failed-logon bursts per account, source IP, and hostname.</li>
+              <li>Flags a group once failed attempts inside it cluster faster than a configurable threshold, catching bursts a raw event count would miss.</li>
+              <li>Breaks each flagged group down by logon type, auth protocol, source port, and return code, then exports one Excel workbook with a sheet per dimension for triage.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div>
+            <div class="exp-period">2026</div>
+            <div class="exp-company">Hackathon</div>
+          </div>
+          <div>
+            <h3 class="exp-role">RunbookAI — Scripts to Runbooks</h3>
+            <ul class="exp-bullets">
+              <li>Built solo at a hackathon: turns a bash, PowerShell, or Python script into a structured runbook — prerequisites, parameters, verification, rollback, risks — using static analysis for the facts and a local LLM (Ollama, offline by default) for the narrative.</li>
+              <li>Static analysis findings are treated as authoritative and reconciled against the model's output, so a runbook never reports a parameter or flag the model invented.</li>
+              <li>
+                <a class="bullet-link" href="https://github.com/Shoham-Houta/RunbookAI" rel="noopener">View RunbookAI on GitHub ↗</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div>
             <div class="exp-period">Ongoing</div>
-            <div class="exp-company">Self-hosted</div>
+            <div class="exp-company">Proxmox</div>
           </div>
           <div>
             <h3 class="exp-role">Home Lab — Personal Infrastructure</h3>
             <ul class="exp-bullets">
-              <li>Run a self-hosted Linux server with multiple containerised services, managed through Docker Compose with network isolation between components.</li>
-              <li>Applied zero-trust principles using a private VPN mesh, exposing services without opening public ports.</li>
-              <li>Day-to-day practice with Linux service management, container security, and access control in a live environment.</li>
+              <li>Migrated from a single Docker Compose host to Proxmox, splitting services across VMs and containers instead of one flat stack.</li>
+              <li>Hands-on practice with virtualisation and host isolation, recursive DNS resolution and ad-blocking, reverse proxying, and running a private network mesh with zero-trust access — no service exposed on a public port.</li>
+              <li>Ongoing work managing a growing set of self-hosted services on top of that, including password management, document management, uptime monitoring, and local LLM inference.</li>
             </ul>
           </div>
         </article>
